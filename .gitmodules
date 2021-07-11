@@ -1,0 +1,7 @@
+[submodule "tomektom/themes/fuji"]
+	path = tomektom/themes/fuji
+	url = https://github.com/amzrk2/hugo-theme-fuji.git
+[submodule "tomektom/public"]
+	path = tomektom/public
+	url = git@github.com:tomektom/tomektom.github.io.git
+	branch = main
