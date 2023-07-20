@@ -46,7 +46,7 @@ jobs:
       run: |
         echo "Hello ${{ inputs.name }}"
         echo "To jest numer ${{ inputs.test }}"
-        echo "twój wybór ${{ inputs. }}"
+        echo "twój wybór ${{ inputs.choice }}"
         echo "zmienna $ZMIENNA"
         echo "sekret $SEKRET"
         echo "repo var $REPOVAR"
