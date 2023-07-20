@@ -17,6 +17,19 @@ on:
         required: true
         # The data type of the input
         type: string
+      test:
+        description: "testowy opis"
+        type: number
+        required: false
+      choice:
+        description: "jakiś wybór"
+        required: true
+        type: choice
+        options:
+          - Ubuntu
+          - macOS
+          - $ZMIENNA
+          - $REPOSECRET
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -24,9 +37,17 @@ jobs:
   greet:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    environment: test
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: echo "Hello ${{ inputs.name }}"
+      run: |
+        echo "Hello ${{ inputs.name }}"
+        echo "To jest numer ${{ inputs.test }}"
+        echo "twój wybór ${{ inputs. }}"
+        echo "zmienna $ZMIENNA"
+        echo "sekret $SEKRET"
+        echo "repo var $REPOVAR"
+        echo "repo secret $REPOSECRET"
