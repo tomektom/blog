@@ -68,7 +68,7 @@ jobs:
       uses: actions/checkout@v2 # Required to mount the Github Workspace to a volume 
     - uses: addnab/docker-run-action@v3
       with:
-        registry: gcr.io/foundry-rs
+        registry: ghcr.io/foundry-rs
         image: foundry:latest
 #      options: -v ${{ github.workspace }}:/work -e ABC=123
         run: |
