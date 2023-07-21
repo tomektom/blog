@@ -59,6 +59,7 @@ jobs:
          source /home/runner/.bashrc
          cat /home/runner/.bashrc
          ls -la
+         pwd
          foundryup
          forge -V
 
