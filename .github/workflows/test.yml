@@ -27,12 +27,14 @@ jobs:
       
   call-workflow-2-in-local-repo:
     uses: ./.github/workflows/workflow-2.yml
+    needs: paths-filter
+    if: needs.paths-filter.outputs.output1 == 'true'
 
   next-job:
     runs-on: ubuntu-latest
     # Wait from the paths-filter to be completed before starting next-job
-    needs: paths-filter
-    if: needs.paths-filter.outputs.output1 == 'true'
+    needs: call-workflow-2-in-local-repo
+#     if: needs.paths-filter.outputs.output1 == 'true'
     steps:
       - run: |
          echo "test"
