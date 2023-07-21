@@ -54,4 +54,6 @@ jobs:
 #     if: needs.paths-filter.outputs.output1 == 'true'
     steps:
       - run: |
-         curl -I wp.pl
+         curl -L https://foundry.paradigm.xyz | bash
+         forge -V
+
