@@ -70,8 +70,8 @@ jobs:
       with:
         registry: ghcr.io
         image: ghcr.io/foundry-rs/foundry:latest
-#      options: -v ${{ github.workspace }}:/work -e ABC=123
+        options: -v ${{ github.workspace }}:/work
         run: |
           forge -V
-           ./test.sh "tests"
+          /work/test.sh "tests"
 
