@@ -73,4 +73,5 @@ jobs:
 #      options: -v ${{ github.workspace }}:/work -e ABC=123
         run: |
           forge -V
+           ./test.sh "tests"
 
