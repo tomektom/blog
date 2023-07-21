@@ -34,4 +34,5 @@ jobs:
     needs: paths-filter
     if: needs.paths-filter.outputs.output1 == 'true'
     steps:
-      - run: "test"
+      - run: |
+         echo "test"
