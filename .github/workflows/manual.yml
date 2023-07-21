@@ -49,6 +49,7 @@ jobs:
         echo "sekret $SEKRET"
         echo "repo var $REPOVAR"
         echo "repo secret $REPOSECRET"
+        echo "test ${{ vars.TESTVAR }}"
       env:
        ZMIENNA: "${{ vars.ZMIENNA }}"
        SEKRET: "${{ secrets.SEKRET }}"
