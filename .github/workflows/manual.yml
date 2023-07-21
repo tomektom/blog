@@ -38,7 +38,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     environment: test
-
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Runs a single command using the runners shell
@@ -47,7 +47,13 @@ jobs:
         echo "Hello ${{ inputs.name }}"
         echo "To jest numer ${{ inputs.test }}"
         echo "twój wybór ${{ inputs.choice }}"
-        echo "zmienna ${{ secrets.ZMIENNA }}"
-        echo "sekret ${{ secrets.SEKRET }}"
-        echo "repo var ${{ secrets.REPOVAR }}"
-        echo "repo secret ${{ secrets.REPOSECRET }}"
+        echo "zmienna $ZMIENNA"
+        echo "sekret $SEKRET"
+        echo "repo var $REPOVAR"
+        echo "repo secret $REPOSECRET"
+      env:
+       ZMIENNA: "${{ secrets.ZMIENNA }}"
+       SEKRET: "${{ secrets.SEKRET }}"
+       REPOVAR: "${{ secrets.REPOVAR }}"
+       REPOSECRET: "${{ secrets.REPOSECRET }}"
+
