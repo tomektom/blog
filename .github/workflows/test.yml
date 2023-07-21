@@ -33,8 +33,17 @@ jobs:
   next-job:
     runs-on: ubuntu-latest
     # Wait from the paths-filter to be completed before starting next-job
-    needs: call-workflow-2-in-local-repo
+    needs: paths-filter
 #     if: needs.paths-filter.outputs.output1 == 'true'
     steps:
       - run: |
          echo "test"
+
+  next-job-3:
+    runs-on: ubuntu-latest
+    # Wait from the paths-filter to be completed before starting next-job
+    needs: next-job
+#     if: needs.paths-filter.outputs.output1 == 'true'
+    steps:
+      - run: |
+         echo "test 3"
