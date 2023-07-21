@@ -28,8 +28,8 @@ on:
         options:
           - Ubuntu
           - macOS
-          - ${{ vars.ZMIENNA }}
-          - ${{ vars.REPOVAR }}
+          - ${{ secrets.ZMIENNA }}
+          - ${{ secrets.REPOVAR }}
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -47,7 +47,7 @@ jobs:
         echo "Hello ${{ inputs.name }}"
         echo "To jest numer ${{ inputs.test }}"
         echo "twój wybór ${{ inputs.choice }}"
-        echo "zmienna ${{ vars.ZMIENNA }}"
-        echo "sekret ${{ vars.SEKRET }}"
-        echo "repo var ${{ vars.REPOVAR }}"
-        echo "repo secret ${{ vars.REPOSECRET }}"
+        echo "zmienna ${{ secrets.ZMIENNA }}"
+        echo "sekret ${{ secrets.SEKRET }}"
+        echo "repo var ${{ secrets.REPOVAR }}"
+        echo "repo secret ${{ secrets.REPOSECRET }}"
