@@ -24,6 +24,9 @@ jobs:
     - name: not workflow tests
       if: steps.filter.outputs.workflows != 'true'
       run: echo "NOT workflow file"
+      
+  call-workflow-2-in-local-repo:
+    uses: ./.github/workflows/workflow-2.yml
 
   next-job:
     runs-on: ubuntu-latest
