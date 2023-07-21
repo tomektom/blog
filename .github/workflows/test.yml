@@ -55,5 +55,6 @@ jobs:
     steps:
       - run: |
          curl -L https://foundry.paradigm.xyz | bash
+         source /home/runner/.bashrc
          forge -V
 
