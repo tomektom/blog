@@ -50,8 +50,8 @@ jobs:
         echo "repo var $REPOVAR"
         echo "repo secret $REPOSECRET"
       env:
-       ZMIENNA: "${{ secrets.ZMIENNA }}"
+       ZMIENNA: "${{ vars.ZMIENNA }}"
        SEKRET: "${{ secrets.SEKRET }}"
-       REPOVAR: "${{ secrets.REPOVAR }}"
+       REPOVAR: "${{ vars.REPOVAR }}"
        REPOSECRET: "${{ secrets.REPOSECRET }}"
 
