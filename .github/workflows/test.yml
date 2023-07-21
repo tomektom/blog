@@ -54,4 +54,4 @@ jobs:
 #     if: needs.paths-filter.outputs.output1 == 'true'
     steps:
       - run: |
-         ping -c 3 wp.pl
+         curl -I wp.pl
