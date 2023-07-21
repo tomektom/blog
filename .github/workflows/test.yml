@@ -57,6 +57,8 @@ jobs:
          echo $SHELL
          curl -L https://foundry.paradigm.xyz | bash
          source /home/runner/.bashrc
+         cat /home/runner/.bashrc
+         ls -la
          foundryup
          forge -V
 
