@@ -3,7 +3,7 @@ name: Paths Filter Example
 on: 
   push:
     branches:
-      - main
+      - test
   workflow_dispatch:
 
 jobs:
