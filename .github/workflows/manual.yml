@@ -64,7 +64,6 @@ jobs:
     steps:
     - name: lol
       run: |
-        echo "${{ jobs.greet.result }}"
         echo "Hello world"
         echo "$GITHUB_REPOSITORY"
         echo "${{ github.repository }}"
