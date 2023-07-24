@@ -63,6 +63,6 @@ jobs:
     steps:
     - name: lol
       run: |
-        echo "Hello world
+        echo "Hello world"
   
 
