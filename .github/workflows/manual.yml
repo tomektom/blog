@@ -40,12 +40,14 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: Checkout
+      id: checkout
       uses: actions/checkout@v3
       with:
         submodules: recursive
     # Runs a single command using the runners shell
     - name: Send greeting
       run: |
+        echo "wynik checkout: ${{ steps.checkout.outcome }}"
         echo "Hello ${{ inputs.name }}"
         echo "To jest numer ${{ inputs.test }}"
         echo "twój wybór ${{ inputs.choice }}"
@@ -62,6 +64,7 @@ jobs:
     steps:
     - name: lol
       run: |
+        echo "${{ jobs.greet.result }}"
         echo "Hello world"
         echo "$GITHUB_REPOSITORY"
         echo "${{ github.repository }}"
