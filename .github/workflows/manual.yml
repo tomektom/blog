@@ -57,4 +57,12 @@ jobs:
        SEKRET: "${{ secrets.SEKRET }}"
        REPOVAR: "${{ vars.REPOVAR }}"
        REPOSECRET: "${{ secrets.REPOSECRET }}"
+  dalej:
+    runs-on: ubuntu-latest
+    needs: [greet]
+    steps:
+    - name: lol
+      run: |
+        echo "Hello world
+  
 
