@@ -50,6 +50,7 @@ jobs:
 
   job4:
     runs-on: ubuntu-latest
+    environment: test
 # #     needs: [call-workflow-2-in-local-repo, next-job-3]
 # #     if: needs.paths-filter.outputs.output1 == 'true'
     steps:
