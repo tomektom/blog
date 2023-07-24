@@ -74,4 +74,9 @@ jobs:
         run: |
           forge -V
           /work/test.sh "tests"
+      env:
+        ZMIENNA: "${{ vars.ZMIENNA }}"
+        SEKRET: "${{ secrets.SEKRET }}"
+        REPOVAR: "${{ vars.REPOVAR }}"
+        REPOSECRET: "${{ secrets.REPOSECRET }}"
 
