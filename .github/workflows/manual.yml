@@ -50,6 +50,7 @@ jobs:
         echo "To jest numer ${{ inputs.test }}"
         echo "twój wybór ${{ inputs.choice }}"
         echo "test ${{ vars.TESTVAR }}"
+        echo "${{ github.repository }}"
         ./test.sh ${{ inputs.name }}
       env:
        ZMIENNA: "${{ vars.ZMIENNA }}"
