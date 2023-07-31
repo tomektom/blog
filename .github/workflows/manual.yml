@@ -51,6 +51,8 @@ jobs:
         echo "twój wybór ${{ inputs.choice }}"
         echo "test ${{ vars.TESTVAR }}"
         ./test.sh ${{ inputs.name }}
+        echo "To jest plik." >> plik.txt
+        cat plik.txt | awk '{print $3}'
       env:
        ZMIENNA: "${{ vars.ZMIENNA }}"
        SEKRET: "${{ secrets.SEKRET }}"
