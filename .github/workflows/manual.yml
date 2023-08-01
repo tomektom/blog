@@ -53,6 +53,7 @@ jobs:
         ./test.sh ${{ inputs.name }}
         echo "To jest plik." >> plik.txt
         cat plik.txt | awk '{print $3}'
+        echo "Hex: ${{ vars.HEX }}"
       env:
        ZMIENNA: "${{ vars.ZMIENNA }}"
        SEKRET: "${{ secrets.SEKRET }}"
