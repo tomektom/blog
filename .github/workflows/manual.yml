@@ -53,10 +53,11 @@ jobs:
         ./test.sh ${{ inputs.name }}
         echo "To jest plik." >> plik.txt
         cat plik.txt | awk '{print $3}'
-        echo "Hex: ${{ vars.HEX }}"
+        echo "Hex: $HEX"
       env:
        ZMIENNA: "${{ vars.ZMIENNA }}"
        SEKRET: "${{ secrets.SEKRET }}"
        REPOVAR: "${{ vars.REPOVAR }}"
        REPOSECRET: "${{ secrets.REPOSECRET }}"
+       HEX: "${{ vars.HEX }}"
 
