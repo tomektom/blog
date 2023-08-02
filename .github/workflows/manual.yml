@@ -62,7 +62,7 @@ jobs:
         mkdir test
         ls -la
     - name: check
-      working-directory: tomektom/test
+      working-directory: .
       run: |
         pwd
         ls -la
