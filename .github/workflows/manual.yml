@@ -31,7 +31,7 @@ on:
 
 defaults:
   run:
-    working-directory: scripts
+    working-directory: tomektom
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -60,10 +60,9 @@ jobs:
         cat plik.txt | awk '{print $3}'
         echo "Hex: $HEX"
         pwd
-        cd tomektom
-        pwd
+        mkdir test
     - name: check
-      working-directory: tomektom
+      working-directory: test
       run: |
         pwd
         ls -la
