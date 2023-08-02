@@ -58,6 +58,7 @@ jobs:
         cd tomektom
         pwd
     - name: check
+      working-directory: tomektom
       run: |
         pwd
         ls -la
