@@ -54,6 +54,10 @@ jobs:
         echo "To jest plik." >> plik.txt
         cat plik.txt | awk '{print $3}'
         echo "Hex: $HEX"
+        pwd
+    - name: check
+      run: |
+        pwd
       env:
        ZMIENNA: "${{ vars.ZMIENNA }}"
        SEKRET: "${{ secrets.SEKRET }}"
