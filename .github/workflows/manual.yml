@@ -55,9 +55,11 @@ jobs:
         cat plik.txt | awk '{print $3}'
         echo "Hex: $HEX"
         pwd
+        cd tomektom
     - name: check
       run: |
         pwd
+        ls -la
       env:
        ZMIENNA: "${{ vars.ZMIENNA }}"
        SEKRET: "${{ secrets.SEKRET }}"
