@@ -55,12 +55,12 @@ jobs:
         echo "To jest numer ${{ inputs.test }}"
         echo "twój wybór ${{ inputs.choice }}"
         echo "test ${{ vars.TESTVAR }}"
-        ./test.sh ${{ inputs.name }}
         echo "To jest plik." >> plik.txt
         cat plik.txt | awk '{print $3}'
         echo "Hex: $HEX"
         pwd
         mkdir test
+        ls -la
     - name: check
       working-directory: test
       run: |
