@@ -63,7 +63,7 @@ jobs:
         mkdir test
         ls -la
     - name: check
-      if: inputs.deploy_guardian == false
+      if: inputs.name == false
       working-directory: .
       run: |
         pwd
