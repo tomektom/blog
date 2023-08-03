@@ -52,6 +52,7 @@ jobs:
     - name: Send greeting
       if: inputs.name == true
       run: |
+        echo "${{ github.sha }}"
         echo "Hello ${{ inputs.name }}"
         echo "To jest numer ${{ inputs.test }}"
         echo "twój wybór ${{ inputs.choice }}"
@@ -66,6 +67,7 @@ jobs:
       if: inputs.name == false
       working-directory: .
       run: |
+        echo "${{ github.sha }}"
         pwd
         ls -la
       env:
