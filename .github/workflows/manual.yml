@@ -50,7 +50,7 @@ jobs:
         submodules: recursive
     # Runs a single command using the runners shell
     - name: Send greeting
-      if: inputs.name == 'true'
+      if: inputs.name == true
       run: |
         echo "Hello ${{ inputs.name }}"
         echo "To jest numer ${{ inputs.test }}"
@@ -63,7 +63,7 @@ jobs:
         mkdir test
         ls -la
     - name: check
-      if: inputs.deploy_guardian == 'false'
+      if: inputs.deploy_guardian == false
       working-directory: .
       run: |
         pwd
