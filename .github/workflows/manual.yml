@@ -50,7 +50,7 @@ jobs:
         submodules: recursive
     # Runs a single command using the runners shell
     - name: Send greeting
-      if: inputs.name == true
+#       if: inputs.name == true
       run: |
         echo "${{ github.sha }}"
         echo "Hello ${{ inputs.name }}"
@@ -64,12 +64,10 @@ jobs:
         mkdir test
         ls -la
     - name: check
-      if: inputs.name == false
+#       if: inputs.name == false
       working-directory: .
       run: |
-        echo "${{ github.sha }}"
-        pwd
-        ls -la
+        go version
       env:
        ZMIENNA: "${{ vars.ZMIENNA }}"
        SEKRET: "${{ secrets.SEKRET }}"
