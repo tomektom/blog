@@ -82,7 +82,7 @@ jobs:
       run: |
         echo "${{ github.sha }}"
         echo "Hello ${{ inputs.name }}"
-        echo "${{ inputs.test }}" | jq '.squadName'
+        echo ${{ inputs.test }} | jq '.squadName'
         echo "twój wybór ${{ inputs.choice }}"
         echo "test ${{ vars.TESTVAR }}"
         echo "To jest plik." >> plik.txt
