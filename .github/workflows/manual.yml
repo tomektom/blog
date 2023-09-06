@@ -18,7 +18,7 @@ on:
         # The data type of the input
         type: boolean
       test:
-        description: "testowy opis"
+        description: "Test?"
         type: boolean
         required: false
         default: true
