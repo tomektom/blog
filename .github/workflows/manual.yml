@@ -57,6 +57,7 @@ jobs:
         if: ${{ inputs.test }}
         run: |
           npm install hardhat
+          npx hardhat
           npx hardhat test
         id: build
         
