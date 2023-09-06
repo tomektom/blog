@@ -19,8 +19,9 @@ on:
         type: boolean
       test:
         description: "testowy opis"
-        type: number
+        type: boolean
         required: false
+        default: true
       choice:
         description: "jakiś wybór"
         required: true
@@ -52,16 +53,12 @@ jobs:
         with:
           version: nightly
 
-      - name: Run Forge build
+      - name: Run Test
+        if: ${{ inputs.test }}
         run: |
-          forge --version
-          forge build --sizes
+          npx hardhat test
         id: build
-
-      - name: Run Forge tests
-        run: |
-          forge test -vvv
-        id: test
+        
       - name: check jq
         run: jq --version
   # This workflow contains a single job called "greet"
