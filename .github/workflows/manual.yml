@@ -57,48 +57,54 @@ jobs:
         if: ${{ inputs.test }}
         run: |
           npm install hardhat
-          npx hardhat
-          npx hardhat test
         id: build
+      - name: Run Test 2
+        if: ${{ inputs.test }}
+        run: |
+          npx hardhat
+      - name: Run Test 3
+        if: ${{ inputs.test }}
+        run: |
+          npx hardhat test
         
       - name: check jq
         run: jq --version
   # This workflow contains a single job called "greet"
-  greet:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    environment: test
+#   greet:
+#     # The type of runner that the job will run on
+#     runs-on: ubuntu-latest
+#     environment: test
     
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        submodules: recursive
-    # Runs a single command using the runners shell
-    - name: Send greeting
-#       if: inputs.name == true
-      run: |
-        echo "${{ github.sha }}"
-        echo "Hello ${{ inputs.name }}"
-        echo '${{ inputs.test }}' | jq '.squadName'
-        echo "twój wybór ${{ inputs.choice }}"
-        echo "test ${{ vars.TESTVAR }}"
-        echo "To jest plik." >> plik.txt
-        cat plik.txt | awk '{print $3}'
-        echo "Hex: $HEX"
-        pwd
-        mkdir test
-        ls -la
-    - name: check
-#       if: inputs.name == false
-      working-directory: .
-      run: |
-        go version
-      env:
-       ZMIENNA: "${{ vars.ZMIENNA }}"
-       SEKRET: "${{ secrets.SEKRET }}"
-       REPOVAR: "${{ vars.REPOVAR }}"
-       REPOSECRET: "${{ secrets.REPOSECRET }}"
-       HEX: "${{ vars.HEX }}"
+#     # Steps represent a sequence of tasks that will be executed as part of the job
+#     steps:
+#     - name: Checkout
+#       uses: actions/checkout@v3
+#       with:
+#         submodules: recursive
+#     # Runs a single command using the runners shell
+#     - name: Send greeting
+# #       if: inputs.name == true
+#       run: |
+#         echo "${{ github.sha }}"
+#         echo "Hello ${{ inputs.name }}"
+#         echo '${{ inputs.test }}' | jq '.squadName'
+#         echo "twój wybór ${{ inputs.choice }}"
+#         echo "test ${{ vars.TESTVAR }}"
+#         echo "To jest plik." >> plik.txt
+#         cat plik.txt | awk '{print $3}'
+#         echo "Hex: $HEX"
+#         pwd
+#         mkdir test
+#         ls -la
+#     - name: check
+# #       if: inputs.name == false
+#       working-directory: .
+#       run: |
+#         go version
+#       env:
+#        ZMIENNA: "${{ vars.ZMIENNA }}"
+#        SEKRET: "${{ secrets.SEKRET }}"
+#        REPOVAR: "${{ vars.REPOVAR }}"
+#        REPOSECRET: "${{ secrets.REPOSECRET }}"
+#        HEX: "${{ vars.HEX }}"
 
