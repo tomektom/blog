@@ -62,6 +62,8 @@ jobs:
         run: |
           echo "xyz: $XYZ"
           echo "zzz: $ZZZ"
+          echo "TTT=test" >> "$GITHUB_ENV"
+          echo "ttt: $TTT"
 
       - name: Run Test
         if: ${{ inputs.test }}
