@@ -52,6 +52,15 @@ jobs:
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: nightly
+      
+      - name: test
+        run: |
+          echo "XYZ=xyz" >> "$GITHUB_ENV"
+
+      - name: jhdsfjds
+        run: |
+          echo "xyz: $XYZ"
+          echo "gh env: $GITHUB_ENV"
 
       - name: Run Test
         if: ${{ inputs.test }}
