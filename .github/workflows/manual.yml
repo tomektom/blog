@@ -56,11 +56,12 @@ jobs:
       - name: test
         run: |
           echo "XYZ=xyz" >> "$GITHUB_ENV"
+          export ZZZ=zzz
 
       - name: jhdsfjds
         run: |
           echo "xyz: $XYZ"
-          echo "gh env: $GITHUB_ENV"
+          echo "zzz: $ZZZ"
 
       - name: Run Test
         if: ${{ inputs.test }}
