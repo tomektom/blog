@@ -58,6 +58,7 @@ jobs:
           template: test.yml.j2
           output_file: ttest.yml
           strict: true
+          data_format: json 
 
       - name: Cat
         run: |
