@@ -1,5 +1,5 @@
 {{ env['TESTVAR'] }}:
-{% for item in TEST_JSON %}
+{%- for item in TEST_JSON -%}
         - name: NETWORK_{{ item.NAME | upper }}_NAME
           value: "{{ item.ID }}"
-{% endfor %}
+{%- endfor -%}
