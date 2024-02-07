@@ -69,6 +69,15 @@ jobs:
       - name: Cat
         run: |
           cat ttest.yml
+      
+      - name: Generate env
+        run: | 
+          cat > newfile.txt <<EOF
+            test=${{ vars.TEST }}
+          EOF
+
+      - name: echo
+        run: cat newfile.txt
 
       # - name: Install Foundry
       #   uses: foundry-rs/foundry-toolchain@v1
