@@ -66,9 +66,9 @@ jobs:
       #     data_format: json
       #     data_file: data.json
 
-      - name: Cat
-        run: |
-          cat ttest.yml
+      # - name: Cat
+      #   run: |
+      #     cat ttest.yml
       
       - name: Generate env
         run: | 
