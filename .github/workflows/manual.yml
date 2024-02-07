@@ -53,18 +53,18 @@ jobs:
           submodules: recursive
         name: Prepare metadata and deploy
 
-      - name: data
-        run: |
-          echo "$TEST_JSON" >> data.json
+      # - name: data
+      #   run: |
+      #     echo "$TEST_JSON" >> data.json
 
-      - name: Setup metadata
-        uses: cuchi/jinja2-action@v1.2.0
-        with:
-          template: test.yml.j2
-          output_file: ttest.yml
-          strict: true
-          data_format: json
-          data_file: data.json
+      # - name: Setup metadata
+      #   uses: cuchi/jinja2-action@v1.2.0
+      #   with:
+      #     template: test.yml.j2
+      #     output_file: ttest.yml
+      #     strict: true
+      #     data_format: json
+      #     data_file: data.json
 
       - name: Cat
         run: |
