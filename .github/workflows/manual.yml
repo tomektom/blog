@@ -37,6 +37,7 @@ on:
 env:
   TEST_JSON: ${{ vars.TEST_JSON }}
   TESTVAR: ${{ vars.TESTVAR }}
+  TEST: "dupa"
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -56,6 +57,10 @@ jobs:
       - name: test
         if: ${{ github.ref.name }} == "dupa"
         run: echo $GITHUB_REF_NAME
+
+      - name: sdkfjsdk
+        if: github.ref == 'refs/heads/prod'
+        run: echo "ksdjfkjsjd"
       # - name: docker test
       #   run: docker build . --file Dockerfile
               
