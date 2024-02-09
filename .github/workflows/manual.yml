@@ -54,7 +54,7 @@ jobs:
         name: Prepare metadata and deploy
 
       - name: test
-        if: GITHUB_REF_NAME == "main"
+        if: ${{ github.ref.name == "main" }}
         run: echo $GITHUB_REF_NAME
       # - name: docker test
       #   run: docker build . --file Dockerfile
