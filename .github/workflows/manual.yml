@@ -53,8 +53,10 @@ jobs:
           submodules: recursive
         name: Prepare metadata and deploy
 
-      - name: docker test
-        run: docker build . --file Dockerfile
+      - name: test
+        run: echo $GITHUB_REF_NAME
+      # - name: docker test
+      #   run: docker build . --file Dockerfile
               
 
       # - name: data
