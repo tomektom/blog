@@ -62,8 +62,8 @@ jobs:
       - name: sdkfjsdk
         if: github.ref == 'refs/heads/prod'
         run: echo "ksdjfkjsjd"
-      # - name: docker test
-      #   run: docker build . --file Dockerfile
+      - name: docker test
+        run: docker build . --file Dockerfile
               
 
       # - name: data
