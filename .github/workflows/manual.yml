@@ -64,8 +64,11 @@ jobs:
         run: echo "ksdjfkjsjd"
       - name: docker test
         run: docker build . --file Dockerfile -t test:latest
+      - name: kup
+        working-directory: /home/vagrant
+        run: touch testfile.txt
       - name: docker test2
-        run: docker run test:latest
+        run: docker run test:latest -d
               
 
       # - name: data
