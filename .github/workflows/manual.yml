@@ -63,7 +63,9 @@ jobs:
         if: github.ref == 'refs/heads/prod'
         run: echo "ksdjfkjsjd"
       - name: docker test
-        run: docker build . --file Dockerfile
+        run: docker build . --file Dockerfile -t test:latest
+      - name: docker test2
+        run: docker run -it test:latest
               
 
       # - name: data
