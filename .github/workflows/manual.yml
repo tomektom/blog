@@ -65,7 +65,7 @@ jobs:
       - name: docker test
         run: docker build . --file Dockerfile -t test:latest
       - name: docker test2
-        run: docker run -it test:latest
+        run: docker run test:latest
               
 
       # - name: data
