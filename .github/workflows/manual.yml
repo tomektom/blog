@@ -47,28 +47,35 @@ jobs:
       fail-fast: true
 
     name: Foundry project
-    # runs-on: ubuntu-latest
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
+    # runs-on: self-hosted
     steps:
       - uses: actions/checkout@v3
         with:
           submodules: recursive
         name: Prepare metadata and deploy
 
-      - name: test
-        if: ${{ github.ref.name }} == "dupa"
-        run: echo $GITHUB_REF_NAME
+      - name: Copy ENV file
+        run: |
+          echo "${{ vars.ENV_FILE }}" > ./.env
 
-      - name: sdkfjsdk
-        if: github.ref == 'refs/heads/prod'
-        run: echo "ksdjfkjsjd"
-      - name: docker test
-        run: docker build . --file Dockerfile -t test:latest
-      - name: kup
-        working-directory: /home/vagrant
-        run: touch testfile.txt
-      - name: docker test2
-        run: docker run test:latest -d
+      - name: test
+        run: cat .env
+
+      # - name: test
+      #   if: ${{ github.ref.name }} == "dupa"
+      #   run: echo $GITHUB_REF_NAME
+
+      # - name: sdkfjsdk
+      #   if: github.ref == 'refs/heads/prod'
+      #   run: echo "ksdjfkjsjd"
+      # - name: docker test
+      #   run: docker build . --file Dockerfile -t test:latest
+      # - name: kup
+      #   working-directory: /home/vagrant
+      #   run: touch testfile.txt
+      # - name: docker test2
+      #   run: docker run test:latest -d
               
 
       # - name: data
