@@ -65,6 +65,8 @@ jobs:
       - run: |
           source .env
           echo $TEST_1234
+          pwd
+          ls -la
 
       # - name: test
       #   if: ${{ github.ref.name }} == "dupa"
