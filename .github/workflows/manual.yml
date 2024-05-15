@@ -53,7 +53,7 @@ jobs:
     name: Foundry project
     # runs-on: ubuntu-latest
     # runs-on: ubuntu-22.04
-    runs-on: [self-hosted, "$GITHUB_REF_NAME"]
+    runs-on: [self-hosted,"$GITHUB_REF_NAME"]
     # runs-on: ubuntu-20.04
     # runs-on: self-hosted
     steps:
