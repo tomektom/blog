@@ -38,6 +38,7 @@ on:
 #     working-directory: tomektom
 
 env:
+  SECRET: ${{ secrets.SECRET }}
   TEST_JSON: ${{ vars.TEST_JSON }}
   TESTVAR: ${{ vars.TESTVAR }}
   TEST: "dupa"
@@ -51,9 +52,9 @@ jobs:
       fail-fast: true
 
     name: Foundry project
-    # runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
     # runs-on: ubuntu-22.04
-    runs-on: [self-hosted,"${{github.ref_name}}"]
+    # runs-on: [self-hosted,"${{github.ref_name}}"]
     # runs-on: ubuntu-20.04
     # runs-on: self-hosted
     steps:
@@ -68,6 +69,7 @@ jobs:
 
       - name: test
         run: |
+          echo "Sekret $SEKRET"
           echo "GITHUB_BASE_REF=${GITHUB_BASE_REF}"
           echo "GITHUB_HEAD_REF=${GITHUB_HEAD_REF}"
           echo "GITHUB_REF=${GITHUB_REF}"
