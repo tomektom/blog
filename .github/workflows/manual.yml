@@ -69,6 +69,7 @@ jobs:
       - name: test
         run: |
           aws --version
+          cmp --version
 
       # - name: test
       #   run: |
