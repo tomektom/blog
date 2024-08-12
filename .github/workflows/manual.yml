@@ -68,7 +68,7 @@ jobs:
     #       echo "${{ vars.ENV_FILE }}" > ./.env
       - name: test
         run: |
-          aws help
+          aws --version
 
       # - name: test
       #   run: |
