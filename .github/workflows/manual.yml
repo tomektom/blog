@@ -68,6 +68,7 @@ jobs:
     #       echo "${{ vars.ENV_FILE }}" > ./.env
       - name: test
         run: |
+          # komentarz test
           aws --version
           cmp --version
 
