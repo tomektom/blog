@@ -63,9 +63,10 @@ jobs:
     #       submodules: recursive
     #     name: Prepare metadata and deploy
 
-    #   - name: Copy ENV file
-    #     run: |
-    #       echo "${{ vars.ENV_FILE }}" > ./.env
+      - name: Copy ENV file
+        run: |
+          echo "${{ vars.ENV_FILE }}" > ./env
+          cat env
       - name: test
         run: |
           # komentarz test
