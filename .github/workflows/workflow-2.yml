@@ -1,33 +1,18 @@
-# This is a basic workflow that is manually triggered
 
 name: Manual workflow 2
 
 on: workflow_call
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "greet"
-  greet:
-    # The type of runner that the job will run on
+  artifacts-example:
     runs-on: ubuntu-latest
-    environment: test
-    
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    - name: Checkout
-      uses: actions/checkout@v3
-      with:
-        submodules: recursive
-    # Runs a single command using the runners shell
-    - name: Send greeting
-      run: |
-        echo "Hello ${{ inputs.name }}"
-        echo "To jest numer ${{ inputs.test }}"
-        echo "twój wybór ${{ inputs.choice }}"
-        echo "test ${{ vars.TESTVAR }}"
-        ./test.sh ${{ inputs.name }}
-      env:
-       ZMIENNA: "${{ vars.ZMIENNA }}"
-       SEKRET: "${{ secrets.SEKRET }}"
-       REPOVAR: "${{ vars.REPOVAR }}"
-       REPOSECRET: "${{ secrets.REPOSECRET }}"
+      - uses: actions/checkout@v4
+
+      - name: 'remove preinstalled curl libcurl4{-doc}'
+        run: echo "random text for random file" > randomfile.txt
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: 'sample-artifact'
+          path: 'randomfile.txt'
