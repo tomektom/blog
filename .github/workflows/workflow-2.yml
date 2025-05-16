@@ -1,7 +1,8 @@
 
 name: Manual workflow 2
 
-on: workflow_call
+on:
+  workflow_dispatch:
 
 jobs:
   artifacts-example:
